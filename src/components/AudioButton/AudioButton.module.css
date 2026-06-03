@@ -1,0 +1,131 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  /* Smooth morph between play ↔ stop */
+  transition:
+    max-width          0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    min-width          0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    padding            0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color   0.25s ease,
+    color              0.25s ease,
+    border-color       0.25s ease,
+    opacity            0.15s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+/* ── Sizes ── */
+.sm {
+  height: 40px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  /* play state */
+  max-width: 240px;
+  padding: 0 18px;
+}
+
+.md {
+  height: 48px;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.8px;
+  max-width: 280px;
+  padding: 0 24px;
+}
+
+/* ── Label & Icon wrappers ── */
+.label {
+  overflow: hidden;
+  max-width: 200px;
+  opacity: 1;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.15s ease;
+}
+
+/* ── Play state ── */
+.play {
+  background: var(--color-orange);
+  color: #ffffff;
+  border: 1.5px solid transparent; /* keep border in DOM, invisible */
+}
+
+.play:hover { background: rgba(235, 80, 39, 0.85); }
+
+/* ── Stop state — collapse to circle (width = height) ── */
+.sm.stop {
+  max-width: 40px;
+  min-width: 40px;
+  padding: 0;
+}
+
+.md.stop {
+  max-width: 48px;
+  min-width: 48px;
+  padding: 0;
+}
+
+.stop .label {
+  max-width: 0;
+  opacity: 0;
+}
+
+.stop .icon {
+  max-width: 16px;
+  opacity: 1;
+}
+
+/* ── Stop colour variants ── */
+.stopWhite {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+}
+
+.stopWhite:hover { background: rgba(255, 255, 255, 0.2); }
+
+.stopOrange {
+  background: transparent;
+  color: var(--color-orange);
+  border: 1.5px solid var(--color-orange);
+}
+
+.stopOrange:hover { background: rgba(235, 80, 39, 0.12); }
+
+@media (max-width: 767px) {
+  .sm {
+    height: 36px;
+    max-width: 220px;
+    padding: 0 16px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .sm.stop {
+    max-width: 36px;
+    min-width: 36px;
+  }
+}

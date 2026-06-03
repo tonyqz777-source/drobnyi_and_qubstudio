@@ -1,5 +1,9 @@
-@import '../styles/tokens.css';
-@import '../styles/typography.css';
+/* ============================================================
+   MAIN STYLES — Qubstudio Application Site
+   ============================================================ */
+
+@import './tokens.css';
+@import './typography.css';
 
 *,
 *::before,
@@ -22,27 +26,9 @@ body {
   line-height: var(--text-md-line-h);
   color:       var(--color-dark);
   background-color: var(--color-bg-page);
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* ── Image protection ── */
-img {
-  -webkit-user-drag: none;
-  user-drag: none;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* Clickable images (links) keep pointer events */
-a img { pointer-events: auto; }
-
+/* ── Layout Container ── */
 .container {
   width: 100%;
   max-width: var(--grid-max-width);
@@ -50,6 +36,7 @@ a img { pointer-events: auto; }
   padding-inline: var(--grid-margin);
 }
 
+/* ── 12-column Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);

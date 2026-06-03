@@ -1,0 +1,157 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: -1.5px;
+  color: var(--color-orange);
+  width: 100%;
+}
+
+/* Mosaic — all positions as % of container (design ref: 1280px wide, 2840px tall) */
+.mosaic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 2840;
+  flex-shrink: 0;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+  filter: blur(6px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.cardImage {
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: var(--color-orange);
+  width: 100%;
+}
+
+/* Card 1: top-left — teammate */
+.card1 {
+  left: 0%;
+  top: 0%;
+  width: 48.83%;
+}
+.card1 .cardImage { aspect-ratio: 625 / 468.75; }
+
+/* Card 2: right — award */
+.card2 {
+  left: 59.53%;
+  top: 10.63%;
+  width: 40.31%;
+}
+.card2 .cardImage { aspect-ratio: 516 / 688; }
+
+/* Card 3: left offset — conversation */
+.card3 {
+  left: 8.28%;
+  top: 28.17%;
+  width: 40.31%;
+}
+.card3 .cardImage { aspect-ratio: 570 / 427.5; }
+
+/* Card 4: right — high five */
+.card4 {
+  left: 51.17%;
+  top: 49.29%;
+  width: 41.64%;
+}
+.card4 .cardImage { aspect-ratio: 2385 / 1342; }
+
+/* Card 5: left — group photo */
+.card5 {
+  left: 0%;
+  top: 58.31%;
+  width: 40.16%;
+}
+.card5 .cardImage { aspect-ratio: 514 / 327; }
+
+/* Card 6: right-bottom — cappuccino */
+.card6 {
+  left: 42.66%;
+  top: 73.80%;
+  width: 40.31%;
+}
+.card6 .cardImage { aspect-ratio: 516 / 688; }
+
+@media (max-width: 767px) {
+  .mosaic {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    aspect-ratio: unset;
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6 {
+    left: auto;
+    top: auto;
+    width: 100%;
+  }
+
+  .card2 .cardImage,
+  .card6 .cardImage {
+    max-width: 274px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: -0.8px;
+    text-align: center;
+  }
+}

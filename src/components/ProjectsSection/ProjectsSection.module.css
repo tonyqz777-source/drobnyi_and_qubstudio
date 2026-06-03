@@ -1,0 +1,185 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: -1.5px;
+  color: var(--color-orange);
+  width: 100%;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 64px;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: stretch;
+}
+
+.cardOrange { background: var(--color-orange); color: #ffffff; }
+.cardBlue   { background: var(--color-blue);   color: #ffffff; }
+.cardYellow { background: var(--color-yellow);  color: #000000; }
+
+/* Left column: title + meta + button pinned to bottom */
+.cardLeft {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* button sits at bottom-left, auto width */
+.cardLeft > a,
+.cardLeft > button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.cardMeta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.cardMetaSerif {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Right column: description + stats */
+.cardRight {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cardDescription {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.1px;
+  width: 100%;
+}
+
+.cardStats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Each stat: number on top, label below */
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.statNum {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.1px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    flex-direction: column;
+    padding: 32px;
+    gap: 24px;
+  }
+
+  /* Unwrap cardLeft so its children become direct flex children of .card */
+  .cardLeft {
+    display: contents;
+  }
+
+  .cardTitle {
+    font-size: clamp(32px, 8vw, 38px);
+    line-height: 1.1;
+    order: 1;
+  }
+
+  .cardMeta,
+  .cardMetaSerif {
+    order: 2;
+  }
+
+  .cardRight {
+    order: 3;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Button goes last — bottom of card */
+  .cardLeft > a,
+  .cardLeft > button {
+    order: 4;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .cardStats {
+    gap: 16px;
+  }
+
+  .statNum {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: -0.8px;
+  }
+}

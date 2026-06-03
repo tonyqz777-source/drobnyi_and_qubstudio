@@ -1,0 +1,113 @@
+/* ============================================================
+   DESIGN TOKENS — Qubstudio Application Site
+   Source: Figma Design System (sjF7TiAzIsoWdsNYZS03KS)
+   ============================================================ */
+
+:root {
+  /* ── Brand Palette ── */
+  --color-cream:   #f4f1e0;
+  --color-yellow:  #f2c744;
+  --color-orange:  #eb5027;
+  --color-blue:    #3077b5;
+  --color-dark:    #1d1d1d;
+  --color-white:   #ffffff;
+  --color-black:   #000000;
+
+  /* ── Neutral Scale ── */
+  --color-neutral-900: #1d1d1d;
+  --color-neutral-700: #3d3d3d;
+  --color-neutral-500: #6b6b6b;
+  --color-neutral-300: #a8a8a8;
+  --color-neutral-100: #e8e6dc;
+
+  /* ── Semantic Tokens ── */
+  --color-bg-page:         var(--color-cream);
+  --color-bg-white:        var(--color-white);
+  --color-bg-accent-orange: var(--color-orange);
+  --color-bg-inverse:      var(--color-neutral-900);
+  --color-brand-primary:   var(--color-orange);
+  --color-brand-secondary: var(--color-yellow);
+
+  /* ── Typography — Font Families ── */
+  --font-heading: 'Unbounded', sans-serif;
+  --font-body:    'Schibsted Grotesk', sans-serif;
+
+  /* ── Typography — Display (88px / ExtraBold / −2 ls) ── */
+  --text-display-size:    88px;
+  --text-display-weight:  800;
+  --text-display-line-h:  92px;
+  --text-display-ls:      -0.02em;
+
+  /* ── Typography — H1 (60px / ExtraBold / −1.5 ls) ── */
+  --text-h1-size:   60px;
+  --text-h1-weight: 800;
+  --text-h1-line-h: 64px;
+  --text-h1-ls:     -0.025em;
+
+  /* ── Typography — H2 (38px / Bold / −0.8 ls) ── */
+  --text-h2-size:   38px;
+  --text-h2-weight: 700;
+  --text-h2-line-h: 44px;
+  --text-h2-ls:     -0.021em;
+
+  /* ── Typography — Body XL (24px / Bold / −0.5 ls) ── */
+  --text-xl-size:   24px;
+  --text-xl-weight: 700;
+  --text-xl-line-h: 28px;
+  --text-xl-ls:     -0.021em;
+
+  /* ── Typography — Body LG (18px / Regular / −0.1 ls) ── */
+  --text-lg-size:   18px;
+  --text-lg-weight: 400;
+  --text-lg-line-h: 26px;
+  --text-lg-ls:     -0.006em;
+
+  /* ── Typography — Body MD (16px / Regular) ── */
+  --text-md-size:   16px;
+  --text-md-weight: 400;
+  --text-md-line-h: 24px;
+  --text-md-ls:     0em;
+
+  /* ── Typography — Body SM (14px / Regular) ── */
+  --text-sm-size:   14px;
+  --text-sm-weight: 400;
+  --text-sm-line-h: 22px;
+  --text-sm-ls:     0em;
+
+  /* ── Typography — Label (11px / Bold / uppercase) ── */
+  --text-label-size:   11px;
+  --text-label-weight: 700;
+  --text-label-line-h: 14px;
+  --text-label-ls:     0.05em;
+
+  /* ── Spacing (8px base grid) ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+
+  /* ── Border Radius ── */
+  --radius-none: 0px;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ── Grid ── */
+  --grid-columns:   12;
+  --grid-gutter:    24px;
+  --grid-margin:    80px;
+  --grid-max-width: 1680px;
+}
