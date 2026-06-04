@@ -9,11 +9,6 @@
   padding: 0;
 }
 
-html,
-body {
-  overflow-x: hidden;
-}
-
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +24,14 @@ body {
   background-color: var(--color-bg-page);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* На мобільному вимикаємо filter у всіх анімаціях — вони блокують GPU і заморожують скрол */
+@media (max-width: 767px) {
+  * {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
 }
 
 a {

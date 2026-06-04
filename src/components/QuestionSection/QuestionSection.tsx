@@ -13,6 +13,12 @@ export default function QuestionSection() {
   const refs = useRef<(HTMLParagraphElement | null)[]>([]);
 
   useEffect(() => {
+    // На мобільному — одразу показуємо всі речення без анімації
+    if (window.innerWidth <= 767) {
+      refs.current.forEach((el) => el && el.classList.add(styles.visible));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,14 +26,11 @@ export default function QuestionSection() {
           if (entry.isIntersecting) {
             el.classList.add(styles.visible);
           } else if (entry.boundingClientRect.top > window.innerHeight) {
-            // елемент повністю нижче viewport — ще не бачили, скидаємо
             el.classList.remove(styles.visible);
           }
-          // в усіх інших випадках (прокрутили нижче або в "мертвій зоні") — лишаємо visible
         });
       },
       {
-        // fires when element enters the central ~30% of the viewport
         rootMargin: '-35% 0px -35% 0px',
         threshold: 0,
       }
