@@ -22,8 +22,16 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Антон — Продуктовий дизайнер",
-  description: "Резюме для Qubstudio",
+  title: "Антон Дробний — Продуктовий дизайнер",
+  description: "7 років у product design. Шукаю місце, де дизайн має значення. Привіт, Qubstudio.",
+  openGraph: {
+    title: "Антон Дробний — Продуктовий дизайнер",
+    description: "7 років у product design. Шукаю місце, де дизайн має значення. Привіт, Qubstudio.",
+    url: "https://qubstudio-and-drobnyi.vercel.app",
+    siteName: "Anton Drobnyi",
+    locale: "uk_UA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
