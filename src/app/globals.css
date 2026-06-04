@@ -26,11 +26,28 @@ body {
   overflow-x: hidden;
 }
 
-/* На мобільному вимикаємо filter у всіх анімаціях — вони блокують GPU і заморожують скрол */
+/* На мобільному — вимикаємо всі scroll-triggered анімації.
+   Вони спрацьовують одночасно при швидкому скролі і блокують iOS scroll */
 @media (max-width: 767px) {
   * {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
     filter: none !important;
     -webkit-filter: none !important;
+  }
+
+  /* Одразу показуємо всі секції що починаються прихованими */
+  [class*="section"],
+  [class*="sentence"],
+  [class*="fadeEl"],
+  [class*="card"],
+  [class*="textCol"],
+  [class*="photo"],
+  [class*="imageWrap"] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
 
