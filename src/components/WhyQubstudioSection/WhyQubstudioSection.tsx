@@ -41,7 +41,7 @@ export default function WhyQubstudioSection() {
       <div className={styles.content}>
         <img
           ref={photoRef}
-          src="/images/я і куб.png"
+          src="/images/я і куб.jpeg"
           alt="Я і Qubstudio"
           className={`${styles.photo} ${styles.fadeEl}`}
         />
