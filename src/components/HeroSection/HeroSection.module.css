@@ -97,6 +97,16 @@
 }
 
 /* Tablet / narrow desktop — nav переходить у двострочний режим */
+@media (max-width: 767px) {
+  .gradientBottom {
+    display: none;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+}
+
 @media (max-width: 960px) {
   .nav {
     top: 20px;
