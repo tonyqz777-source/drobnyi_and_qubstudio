@@ -62,16 +62,17 @@
     overflow-wrap: break-word;
   }
 
-  /* На мобільному — показуємо одразу без затримки */
+  /* На мобільному — одразу visible, без blur і затримки */
   .text p {
     opacity: 1;
+    filter: none;
+    transform: none;
   }
 
-  .section.animate .text p:nth-child(1) {
-    animation-delay: 0s;
-  }
-
-  .section.animate .text p:nth-child(2) {
-    animation-delay: 0s;
+  .section.animate .text p {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }

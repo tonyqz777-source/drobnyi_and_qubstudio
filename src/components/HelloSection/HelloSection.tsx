@@ -10,6 +10,12 @@ export default function HelloSection() {
     const el = sectionRef.current;
     if (!el) return;
 
+    // На мобільному — одразу показуємо без анімації
+    if (window.innerWidth <= 767) {
+      el.classList.add(styles.animate);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
