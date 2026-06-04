@@ -61,4 +61,17 @@
     white-space: normal;
     overflow-wrap: break-word;
   }
+
+  /* На мобільному — показуємо одразу без затримки */
+  .text p {
+    opacity: 1;
+  }
+
+  .section.animate .text p:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .section.animate .text p:nth-child(2) {
+    animation-delay: 0s;
+  }
 }
