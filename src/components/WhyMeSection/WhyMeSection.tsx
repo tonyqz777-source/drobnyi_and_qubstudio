@@ -7,7 +7,7 @@ const CARDS = [
   { cls: styles.card1, src: '/images/додай_мене_на_202604270028 1.png', alt: 'Підтримка тіммейтів', caption: 'Я завжди готовий підтримати своїх тіммейтів' },
   { cls: styles.card2, src: '/images/Кладу нагороду.png',               alt: 'Red Dot Award',       caption: 'Якщо Red Dot — то тільки до вас на полицю' },
   { cls: styles.card3, src: '/images/Розмова за столом.png',            alt: 'Розмова за столом',   caption: 'Завжди радий поговорити про дизайн.\nІ не тільки' },
-  { cls: styles.card4, src: "/images/Дає п'ять.png",                    alt: "Дає п'ять",           caption: 'Для мене люди поруч —\nне менш важливі ніж результат' },
+  { cls: styles.card4, src: "/images/Дає п'ять.jpeg",                    alt: "Дає п'ять",           caption: 'Для мене люди поруч —\nне менш важливі ніж результат' },
   { cls: styles.card5, src: '/images/Групове фото.png',                 alt: 'Групове фото',        caption: 'Я органічно вписуюсь у команду' },
   { cls: styles.card6, src: '/images/Роблю капучіно.png',               alt: 'Роблю капучіно',      caption: 'А ще я вмію робити смачне капучіно' },
 ];
