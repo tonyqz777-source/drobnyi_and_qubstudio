@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       <div className={`${styles.card} ${styles.cardOrange}`}>
         <div className={styles.cardLeft}>
           <p className={styles.cardTitle}>Career Karma</p>
-          <p className={styles.cardMetaSerif}>Sole Product Designer | 2019–2025 | 6 років</p>
+          <p className={styles.cardMeta}>Sole Product Designer | 2019–2025 | 6 років</p>
           <Button variant="outlineWhite" size="md" href="https://drobnyi.framer.website/projects/careerkarma">Повний кейс</Button>
         </div>
         <div className={styles.cardRight}>

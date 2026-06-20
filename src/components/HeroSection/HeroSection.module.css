@@ -96,12 +96,33 @@
   gap: 24px;
 }
 
+.timerWrap {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.timerLabel,
+.timerCount {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* Tablet / narrow desktop — nav переходить у двострочний режим */
 @media (max-width: 767px) {
-  .gradientBottom {
-    display: none;
-  }
-
   .scrollHint {
     display: none;
   }
@@ -158,5 +179,17 @@
   .navRight > :last-child {
     grid-column: 1 / -1;
     justify-self: center;
+  }
+
+  .timerWrap {
+    bottom: 32px;
+    right: 0;
+    left: 0;
+    align-items: center;
+  }
+
+  .timerLabel,
+  .timerCount {
+    text-align: center;
   }
 }
